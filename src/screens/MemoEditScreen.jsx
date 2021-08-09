@@ -13,7 +13,6 @@ export default function MemoEditScreen() {
       </View>
       <CircleButton name="check" />
     </KeyboardSafeView>
-
   );
 }
 
