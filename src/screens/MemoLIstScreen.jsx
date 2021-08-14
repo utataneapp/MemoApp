@@ -16,7 +16,7 @@ export default function MemoListScreen(props) {
     <View style={styles.container}>
       <MemoList />
       <CircleButton
-        name="check"
+        name="plus"
         onPress={() => { navigation.navigate('MemoCreate'); }}
       />
     </View>
