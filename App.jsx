@@ -1,4 +1,5 @@
 import React from 'react';
+import { LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   createStackNavigator,
@@ -20,6 +21,8 @@ require('firebase/firestore');
 
 const Stack = createStackNavigator();
 
+// 警告のエラー回避 //
+LogBox.ignoreLogs(['Setting a timer']);
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
