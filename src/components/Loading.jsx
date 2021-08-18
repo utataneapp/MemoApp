@@ -3,7 +3,7 @@ import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { bool } from 'prop-types';
 
 export default function Loading(props) {
-  const { isLoading} = props;
+  const { isLoading } = props;
   if (!isLoading) {
     return null;
   }

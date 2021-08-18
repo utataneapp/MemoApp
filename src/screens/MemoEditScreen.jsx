@@ -1,9 +1,11 @@
 import { string, shape } from 'prop-types';
 import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Alert } from 'react-native';
+import {
+  View, StyleSheet, TextInput, Alert,
+} from 'react-native';
+import firebase from 'firebase';
 import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyBoardSafeView';
-import firebase from 'firebase';
 import { translateErrors } from '../utils';
 
 export default function MemoEditScreen(props) {

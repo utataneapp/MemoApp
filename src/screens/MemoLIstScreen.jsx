@@ -31,7 +31,6 @@ export default function MemoListScreen(props) {
       unsubscribe = ref.onSnapshot((snapshot) => {
         const userMemos = [];
         snapshot.forEach((doc) => {
-          console.log(doc.id, doc.data());
           const data = doc.data();
           userMemos.push({
             id: doc.id,
@@ -41,8 +40,7 @@ export default function MemoListScreen(props) {
         });
         setMemos(userMemos);
         setLoading(false);
-      }, (error) => {
-        console.log(error);
+      }, () => {
         setLoading(false);
         Alert.alert('データの読み込みに失敗しました。');
       });
@@ -59,7 +57,7 @@ export default function MemoListScreen(props) {
           <Button
             style={emptyStyles.button}
             label="作成する"
-            onPress={() => {navigation.navigate('MemoCreate')}}
+            onPress={() => { navigation.navigate('MemoCreate'); }}
           />
         </View>
       </View>

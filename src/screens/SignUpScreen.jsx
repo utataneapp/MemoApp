@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, TextInput, TouchableOpacity, Alert,
 } from 'react-native';
-import Button from '../components/Button';
 import firebase from 'firebase';
+import Button from '../components/Button';
 import { translateErrors } from '../utils';
 
 export default function SingUpScreen(props) {
@@ -13,9 +13,7 @@ export default function SingUpScreen(props) {
 
   function handlefPress() {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }],
@@ -23,7 +21,6 @@ export default function SingUpScreen(props) {
       })
       .catch((error) => {
         const errorMsg = translateErrors(error.code);
-        console.log(error.code, error.message);
         Alert.alert(errorMsg.title, errorMsg.description);
       });
   }

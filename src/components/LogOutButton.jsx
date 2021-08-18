@@ -1,5 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert} from 'react-native';
+import {
+  TouchableOpacity, Text, StyleSheet, Alert,
+} from 'react-native';
 import firebase from 'firebase';
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,7 +12,7 @@ export default function LogOutButton() {
       .then(() => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'LogIn'}],
+          routes: [{ name: 'LogIn' }],
         });
       })
       .catch(() => {
